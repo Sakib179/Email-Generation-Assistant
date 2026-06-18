@@ -1,0 +1,124 @@
+[
+  {
+    "id": 1,
+    "intent": "Follow up after a client meeting",
+    "tone": "Formal",
+    "key_facts": [
+      "Meeting was yesterday",
+      "Discussed website redesign",
+      "Client asked for timeline",
+      "Proposal due Friday"
+    ],
+    "human_reference_email": "Subject: Follow-Up on Website Redesign Discussion\n\nDear [Recipient],\n\nThank you for meeting with us yesterday to discuss the website redesign. I appreciate the opportunity to understand your priorities and the timeline you asked us to prepare.\n\nAs discussed, we will include the project timeline in the proposal and send it by Friday for your review. Please let me know if there are any additional details you would like us to include.\n\nBest regards,\n[Your Name]"
+  },
+  {
+    "id": 2,
+    "intent": "Request missing proposal details",
+    "tone": "Polite and clear",
+    "key_facts": [
+      "Need pricing breakdown",
+      "Ask for implementation timeline",
+      "Request case studies",
+      "Deadline Monday"
+    ],
+    "human_reference_email": "Subject: Request for Remaining Proposal Details\n\nHi [Recipient],\n\nThank you for sharing the proposal materials. Could you please send the remaining details, including the pricing breakdown, the implementation timeline, and any relevant case studies?\n\nWe are working toward a Monday deadline, so receiving these details before then would help us complete our review on time.\n\nBest regards,\n[Your Name]"
+  },
+  {
+    "id": 3,
+    "intent": "Urgent project deadline reminder",
+    "tone": "Urgent but professional",
+    "key_facts": [
+      "Deadline is tomorrow 5 PM",
+      "Backend API is pending",
+      "QA depends on it",
+      "Ask for update by noon"
+    ],
+    "human_reference_email": "Subject: Urgent Update Needed on Backend API\n\nHi [Recipient],\n\nI wanted to flag that the project deadline is tomorrow at 5 PM, and the backend API is still pending. QA depends on this API to begin its final checks.\n\nCould you please send an update by noon today so we can adjust the plan if needed and keep the deadline on track?\n\nBest regards,\n[Your Name]"
+  },
+  {
+    "id": 4,
+    "intent": "Apologize for a service delay",
+    "tone": "Empathetic",
+    "key_facts": [
+      "Delivery delayed by 2 days",
+      "Issue found during final QA",
+      "Team is fixing it",
+      "New delivery date Wednesday"
+    ],
+    "human_reference_email": "Subject: Update on Service Delivery Timeline\n\nHi [Recipient],\n\nI sincerely apologize for the service delay. Delivery will be delayed by 2 days because an issue was found during final QA.\n\nOur team is fixing it now, and the new delivery date is Wednesday. I understand this may create inconvenience, and I appreciate your patience while we make sure the final delivery meets the right standard.\n\nBest regards,\n[Your Name]"
+  },
+  {
+    "id": 5,
+    "intent": "Schedule an interview",
+    "tone": "Formal",
+    "key_facts": [
+      "Candidate shortlisted",
+      "Interview 30 minutes",
+      "Propose Tuesday or Thursday",
+      "Ask for availability"
+    ],
+    "human_reference_email": "Subject: Interview Scheduling Request\n\nDear [Recipient],\n\nWe are pleased to let you know that the candidate has been shortlisted for the next stage. We would like to schedule a 30-minute interview and can offer either Tuesday or Thursday.\n\nPlease share your availability for those days, and we will confirm the interview time accordingly.\n\nBest regards,\n[Your Name]"
+  },
+  {
+    "id": 6,
+    "intent": "Payment reminder",
+    "tone": "Polite but firm",
+    "key_facts": [
+      "Invoice #INV-2041",
+      "Amount $1,250",
+      "Due last Friday",
+      "Attach invoice",
+      "Ask for payment date"
+    ],
+    "human_reference_email": "Subject: Payment Reminder for Invoice #INV-2041\n\nHi [Recipient],\n\nI am writing to follow up on Invoice #INV-2041 for $1,250, which was due last Friday. I have attached the invoice again for your reference.\n\nCould you please confirm the expected payment date? We would appreciate your prompt attention to this outstanding balance.\n\nBest regards,\n[Your Name]"
+  },
+  {
+    "id": 7,
+    "intent": "Internal project status update",
+    "tone": "Concise executive",
+    "key_facts": [
+      "Design completed",
+      "API 80% complete",
+      "QA starts next week",
+      "Risk is delayed content from client"
+    ],
+    "human_reference_email": "Subject: Project Status Update\n\nHi Team,\n\nCurrent status: design is completed, the API is 80% complete, and QA is scheduled to start next week.\n\nThe main risk is delayed content from the client, which may affect downstream timelines. I will continue monitoring this and share updates as needed.\n\nBest regards,\n[Your Name]"
+  },
+  {
+    "id": 8,
+    "intent": "Networking introduction",
+    "tone": "Friendly professional",
+    "key_facts": [
+      "Met at SaaS meetup",
+      "Discussed AI tools",
+      "Share portfolio link",
+      "Suggest 15-minute call"
+    ],
+    "human_reference_email": "Subject: Great Meeting You at the SaaS Meetup\n\nHi [Recipient],\n\nIt was great meeting you at the SaaS meetup and discussing AI tools. I enjoyed hearing your perspective and wanted to stay in touch.\n\nHere is my portfolio link for reference: [Portfolio Link]. If you are open to it, I would be glad to schedule a 15-minute call to continue the conversation.\n\nBest regards,\n[Your Name]"
+  },
+  {
+    "id": 9,
+    "intent": "Request approval for budget",
+    "tone": "Persuasive",
+    "key_facts": [
+      "Need $600 for email API credits",
+      "Supports 3-month pilot",
+      "Expected 2,000 monthly users",
+      "Approval needed by Friday"
+    ],
+    "human_reference_email": "Subject: Budget Approval Request for Email API Credits\n\nDear [Recipient],\n\nI am requesting approval for $600 in email API credits to support our 3-month pilot. This budget will allow us to test the workflow at an expected scale of 2,000 monthly users.\n\nApproval by Friday would help us keep the pilot timeline on track and avoid delays in user testing. Please let me know if you need any additional details.\n\nBest regards,\n[Your Name]"
+  },
+  {
+    "id": 10,
+    "intent": "Respond to customer complaint",
+    "tone": "Calm and empathetic",
+    "key_facts": [
+      "Customer reported wrong report file",
+      "Apologize",
+      "Corrected file attached",
+      "Offer follow-up call"
+    ],
+    "human_reference_email": "Subject: Corrected Report File Attached\n\nHi [Recipient],\n\nThank you for letting us know that the wrong report file was sent. I apologize for the mistake and any inconvenience it caused.\n\nThe corrected file is attached to this email. If it would be helpful, I am also happy to schedule a follow-up call to walk through the report or answer any questions.\n\nBest regards,\n[Your Name]"
+  }
+]
+

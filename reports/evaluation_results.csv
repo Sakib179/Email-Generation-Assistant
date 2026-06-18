@@ -1,0 +1,432 @@
+scenario_id,strategy_name,model_name,intent,tone,generated_subject,generated_email,human_reference_email,fact_recall_integration_score,tone_audience_fit_score,professional_email_quality_score,overall_score,missing_facts,hallucination_flag,judge_reason,attempt_count
+1,simple,openai/gpt-oss-120b,Follow up after a client meeting,Formal,Follow Up After A Client Meeting,"**Subject:** Follow‑Up on Yesterday’s Website Redesign Discussion – Timeline & Proposal Submission
+Dear [Client’s Name],
+I hope this message finds you well. I would like to thank you for meeting with us yesterday to discuss the upcoming redesign of your website. It was a pleasure to learn more about your objectives and to explore how we can support your vision.
+As requested, please find below a brief outline of the projected timeline for the redesign:
+| Phase | Duration | Target Completion |
+|-------|----------|--------------------|
+| Discovery & Requirements Gathering | 1 week | [Date] |
+| Wireframing & Concept Design | 2 weeks | [Date] |
+| Development & Integration | 3 weeks | [Date] |
+| Testing & Quality Assurance | 1 week | [Date] |
+| Final Review & Launch | 1 week | [Date] |
+We are on track to deliver the detailed proposal, including cost estimates and a refined schedule, by **Friday, [Date]**. Should you require any additional information or have further questions before then, please do not hesitate to let me know.
+Thank you again for the opportunity to collaborate on this project. I look forward to your feedback and to moving forward together.
+Warm regards,
+[Your Full Name]
+[Your Position]
+[Your Company]
+Phone: [Your Phone Number]
+Email: [Your Email Address]
+Website: [Company Website]","Subject: Follow-Up on Website Redesign Discussion
+
+Dear [Recipient],
+
+Thank you for meeting with us yesterday to discuss the website redesign. I appreciate the opportunity to understand your priorities and the timeline you asked us to prepare.
+
+As discussed, we will include the project timeline in the proposal and send it by Friday for your review. Please let me know if there are any additional details you would like us to include.
+
+Best regards,
+[Your Name]",9.4,6.8,6.87,7.69,,False,"The generated email includes most of the required facts, but misses the fact that the client asked for a timeline. The tone is mostly formal, but could be more concise and direct. The email quality is good, but could benefit from a more streamlined format.",1
+2,simple,openai/gpt-oss-120b,Request missing proposal details,Polite and clear,Request Missing Proposal Details,"**Subject:** Request for Additional Proposal Details – Pricing, Timeline, and Case Studies
+Dear [Recipient’s Name],
+I hope you are well. Thank you for submitting the initial proposal for [Project/Service Name]. To move forward with our evaluation, could you please provide the following additional information:
+1. **Detailed pricing breakdown** – itemized costs for each component of the solution.
+2. **Implementation timeline** – key milestones, start‑up dates, and estimated completion.
+3. **Relevant case studies** – examples of similar projects you have completed, including outcomes and client references.
+If possible, kindly send the requested details by **Monday, [Date]**, so we can keep our internal review schedule on track.
+Thank you for your assistance. Please let me know if you need any clarification.
+Best regards,
+[Your Full Name]
+[Your Position]
+[Your Company]
+[Phone Number]
+[Email Address]","Subject: Request for Remaining Proposal Details
+
+Hi [Recipient],
+
+Thank you for sharing the proposal materials. Could you please send the remaining details, including the pricing breakdown, the implementation timeline, and any relevant case studies?
+
+We are working toward a Monday deadline, so receiving these details before then would help us complete our review on time.
+
+Best regards,
+[Your Name]",9.7,8.0,8.07,8.59,,False,"The generated email effectively recalls and integrates the required facts, with the only omission being the specific date for the Monday deadline. The tone is polite and clear, but slightly less polished than the human reference email. The email quality is high, with proper formatting and a clear structure.",1
+3,simple,openai/gpt-oss-120b,Urgent project deadline reminder,Urgent but professional,Urgent Project Deadline Reminder,"**Subject:** Urgent: Update Required on Backend API – Deadline Tomorrow 5 PM
+Dear [Recipient’s Name],
+I hope you are well. I am writing to remind you that the project deadline is tomorrow at **5 PM**. The **Backend API** is still pending, and the QA team cannot proceed without it.
+Could you please provide a status update on the API implementation **by 12 PM today**? This will allow us to assess any remaining work and ensure we meet the overall deadline.
+Thank you for your immediate attention to this matter. Please let me know if there are any blockers I can help address.
+Best regards,
+[Your Name]
+[Your Position]
+[Your Company]
+[Phone Number]
+[Email Address]","Subject: Urgent Update Needed on Backend API
+
+Hi [Recipient],
+
+I wanted to flag that the project deadline is tomorrow at 5 PM, and the backend API is still pending. QA depends on this API to begin its final checks.
+
+Could you please send an update by noon today so we can adjust the plan if needed and keep the deadline on track?
+
+Best regards,
+[Your Name]",9.7,8.4,8.07,8.72,,False,"The generated email correctly conveys the urgency of the deadline and the dependency on the Backend API. However, it misses the fact that the Backend API is pending. The tone is mostly professional, but the phrase 'Please let me know if there are any blockers I can help address' slightly deviates from the requested tone of 'Urgent but professional'. The email quality is high, but it includes unnecessary details such as the greeting and the closing sentence.",1
+4,simple,openai/gpt-oss-120b,Apologize for a service delay,Empathetic,Apologize For A Service Delay,"**Subject:** Apology for Delivery Delay – New Delivery Date: Wednesday
+Dear [Recipient’s Name],
+I hope you are well. I am writing to sincerely apologize for the unexpected delay in delivering the [project/service name].
+During our final quality‑assurance review, our team identified an issue that required immediate attention. While we have been working diligently to resolve it, the necessary fixes have extended the timeline by two days.
+We understand how important timely delivery is for your plans, and we regret any inconvenience this may cause. Our team is now addressing the issue, and we are confident that the final product will meet the high standards you expect.
+The revised delivery date is **Wednesday, [insert date]**. We will keep you updated on our progress and confirm once the delivery is complete.
+Thank you for your patience and understanding. If you have any questions or need further information, please do not hesitate to contact me directly.
+Warm regards,
+[Your Full Name]
+[Your Position]
+[Your Company]
+[Phone Number] | [Email Address]","Subject: Update on Service Delivery Timeline
+
+Hi [Recipient],
+
+I sincerely apologize for the service delay. Delivery will be delayed by 2 days because an issue was found during final QA.
+
+Our team is fixing it now, and the new delivery date is Wednesday. I understand this may create inconvenience, and I appreciate your patience while we make sure the final delivery meets the right standard.
+
+Best regards,
+[Your Name]",7.95,8.4,8.07,8.14,Team is fixing it,False,"The generated email effectively conveys the required facts and tone, but could be improved by using the exact phrase 'final QA' to match the original intent.",1
+5,simple,openai/gpt-oss-120b,Schedule an interview,Formal,Schedule An Interview,"**Subject:** Invitation to Interview – Please Confirm Your Availability
+Dear [Candidate’s Name],
+I am pleased to inform you that you have been shortlisted for the [Position Title] position at [Company Name]. We would like to schedule a 30‑minute interview to discuss your qualifications further.
+Could you please let us know your availability for a brief interview on either **Tuesday, [Date]** or **Thursday, [Date]**? If neither of these days works for you, feel free to suggest alternative dates and times that suit your schedule.
+We look forward to speaking with you.
+Kind regards,
+[Your Full Name]
+[Your Job Title]
+[Company Name]
+[Phone Number]
+[Email Address]","Subject: Interview Scheduling Request
+
+Dear [Recipient],
+
+We are pleased to let you know that the candidate has been shortlisted for the next stage. We would like to schedule a 30-minute interview and can offer either Tuesday or Thursday.
+
+Please share your availability for those days, and we will confirm the interview time accordingly.
+
+Best regards,
+[Your Name]",9.4,6.8,6.87,7.69,,False,"The generated email mostly recalls the required facts, but misses the interviewer's name and job title. The tone is mostly formal, but could be more polished. The email quality is good, but could benefit from a more concise structure.",1
+6,simple,openai/gpt-oss-120b,Payment reminder,Polite but firm,Payment Reminder,"**Subject:** Friendly Reminder: Invoice #INV-2041 – Payment Due
+Dear [Recipient’s Name],
+I hope you are well. I am writing to follow up on Invoice **#INV-2041**, issued for **$1,250**, which was due last Friday. For your convenience, I have attached the invoice to this email.
+Could you please let us know the expected payment date? If you have already processed the payment, kindly disregard this reminder and accept our thanks.
+We appreciate your prompt attention to this matter and look forward to your response.
+Best regards,
+[Your Full Name]
+[Your Position]
+[Your Company]
+[Phone Number]
+[Email Address]
+*Attachment: Invoice_INV-2041.pdf*","Subject: Payment Reminder for Invoice #INV-2041
+
+Hi [Recipient],
+
+I am writing to follow up on Invoice #INV-2041 for $1,250, which was due last Friday. I have attached the invoice again for your reference.
+
+Could you please confirm the expected payment date? We would appreciate your prompt attention to this outstanding balance.
+
+Best regards,
+[Your Name]",9.7,8.32,6.87,8.3,,False,"The generated email mostly recalls the required facts, but fails to explicitly mention the due date as 'last Friday'. The tone is polite but firm, but slightly deviates from the requested tone by being overly friendly. The email quality is good, but lacks some details present in the human reference email.",1
+7,simple,openai/gpt-oss-120b,Internal project status update,Concise executive,Internal Project Status Update,"**Subject:** Project XYZ – Status Update (Design Complete, API 80% Done, QA Begins Next Week)
+---
+Hi Team,
+Please find the latest status on Project XYZ:
+- **Design:** Completed and approved.
+- **API Development:** 80 % finished; remaining work focuses on final endpoint integration and performance testing.
+- **Quality Assurance:** Scheduled to commence next week (Monday, June 24).
+- **Risk:** Potential delay due to pending content from the client. We have escalated the issue and are monitoring the timeline closely.
+Action required: If you anticipate any impact on your deliverables, please flag it by end of day tomorrow so we can adjust the schedule accordingly.
+Thank you for your continued focus.
+Best regards,
+[Your Name]
+Project Lead, XYZ Initiative
+[Company Name]","Subject: Project Status Update
+
+Hi Team,
+
+Current status: design is completed, the API is 80% complete, and QA is scheduled to start next week.
+
+The main risk is delayed content from the client, which may affect downstream timelines. I will continue monitoring this and share updates as needed.
+
+Best regards,
+[Your Name]",9.7,8.32,8.07,8.7,,False,"The generated email accurately recalls and integrates all required facts, effectively conveys the concise executive tone, and maintains high professional email quality. The only minor deviation from the tone is the inclusion of an 'action required' section, which is not present in the human reference email but is still suitable for the requested tone.",1
+8,simple,openai/gpt-oss-120b,Networking introduction,Friendly professional,Networking Introduction,"**Subject:** Great Meeting You at the SaaS Meetup – Let’s Connect Further
+Hi [Recipient’s Name],
+It was a pleasure meeting you at the recent SaaS meetup and chatting about the latest AI tools that are reshaping our industry. I enjoyed hearing your perspective on how these technologies can drive product innovation.
+As promised, here’s a link to my portfolio, which showcases a few projects where I’ve applied AI solutions to SaaS products:
+[Your Portfolio URL]
+I’d love to continue our conversation and explore potential synergies. Would you be available for a brief 15‑minute call sometime next week? Please let me know a few time slots that work for you, and I’ll do my best to accommodate.
+Looking forward to staying in touch.
+Best regards,
+[Your Full Name]
+[Your Job Title] | [Your Company]
+[Phone Number] | [LinkedIn Profile]
+[Portfolio URL]","Subject: Great Meeting You at the SaaS Meetup
+
+Hi [Recipient],
+
+It was great meeting you at the SaaS meetup and discussing AI tools. I enjoyed hearing your perspective and wanted to stay in touch.
+
+Here is my portfolio link for reference: [Portfolio Link]. If you are open to it, I would be glad to schedule a 15-minute call to continue the conversation.
+
+Best regards,
+[Your Name]",9.7,7.88,7.47,8.35,,False,"The generated email effectively recalls and integrates the required facts, maintains a friendly professional tone, and demonstrates good professional email quality. It only slightly deviates from the human reference email in terms of tone and style, but still effectively conveys the original intent.",1
+9,simple,openai/gpt-oss-120b,Request approval for budget,Persuasive,Request Approval For Budget,"**Subject:** Approval Request for $600 Email API Credits – 3‑Month Pilot Launch (Decision Needed by Friday)
+---
+Dear [Recipient’s Name],
+I hope you are well.
+I am writing to seek your approval for a modest budget of **$600** to cover email API credits for our upcoming three‑month pilot program. This investment will enable us to:
+- **Support up to 2,000 monthly users** during the pilot, ensuring reliable communication and a seamless user experience.
+- **Gather critical usage data** and feedback that will inform our long‑term scaling strategy.
+- **Demonstrate the value** of the email integration to stakeholders, positioning us for a successful full‑scale rollout.
+The $600 allocation will fully fund the API usage for the entire pilot period, with no hidden costs. Approving this budget by **Friday, [Date]** will allow us to provision the service in time for the scheduled launch on [Launch Date].
+Your prompt approval will keep the project on track and help us achieve our target adoption metrics. Please let me know if you need any additional information or would like to discuss the proposal further.
+Thank you for considering this request. I look forward to your favorable response.
+Best regards,
+[Your Full Name]
+[Your Title]
+[Your Department]
+[Your Phone Number]
+[Your Email Address]","Subject: Budget Approval Request for Email API Credits
+
+Dear [Recipient],
+
+I am requesting approval for $600 in email API credits to support our 3-month pilot. This budget will allow us to test the workflow at an expected scale of 2,000 monthly users.
+
+Approval by Friday would help us keep the pilot timeline on track and avoid delays in user testing. Please let me know if you need any additional details.
+
+Best regards,
+[Your Name]",9.7,8.0,8.07,8.59,,False,"The generated email accurately recalls and integrates all required facts, effectively conveys a persuasive tone, and maintains a high level of professional email quality. The only minor deduction is for tone, as the generated email is slightly more elaborate than the requested tone.",1
+10,simple,openai/gpt-oss-120b,Respond to customer complaint,Calm and empathetic,Respond To Customer Complaint,"**Subject:** Apology and Corrected Report – Let’s Discuss Further
+Dear [Customer’s Name],
+Thank you for bringing the issue with the report file to our attention. I sincerely apologize for the inconvenience this has caused you.
+Please find attached the corrected version of the report. We have double‑checked the data to ensure its accuracy, and we hope it meets your expectations.
+If you would like to review the changes together or have any additional questions, I would be happy to arrange a brief call at a time that suits you. Kindly let me know your preferred availability, and I will schedule it accordingly.
+Thank you for your patience and for giving us the opportunity to resolve this matter. We value your partnership and remain committed to providing you with the highest level of service.
+Warm regards,
+[Your Full Name]
+[Your Position]
+[Your Company]
+Phone: [Your Phone Number]
+Email: [Your Email Address]
+*Attachment: Corrected_Report_[Date].pdf*","Subject: Corrected Report File Attached
+
+Hi [Recipient],
+
+Thank you for letting us know that the wrong report file was sent. I apologize for the mistake and any inconvenience it caused.
+
+The corrected file is attached to this email. If it would be helpful, I am also happy to schedule a follow-up call to walk through the report or answer any questions.
+
+Best regards,
+[Your Name]",7.95,8.4,8.07,8.14,Offer follow-up call,False,"The generated email effectively recalls and integrates the required facts, but misses the specific mention of 'inconvenience caused'. The tone is generally calm and empathetic, but slightly more formal than the human reference email. The email quality is high, with proper formatting and a clear structure.",1
+1,advanced,openai/gpt-oss-120b,Follow up after a client meeting,Formal,Follow-Up on Website Redesign Discussion,"Dear [Recipient],
+
+Thank you for meeting with us yesterday to discuss the website redesign. We appreciate the opportunity to understand your vision and requirements.
+
+As you requested, we are preparing a detailed timeline for the project. You can expect to receive our formal proposal, including the proposed schedule, by Friday.
+
+Please let us know if there are any additional points you would like us to address in the proposal.
+
+Best regards,
+[Your Name]","Subject: Follow-Up on Website Redesign Discussion
+
+Dear [Recipient],
+
+Thank you for meeting with us yesterday to discuss the website redesign. I appreciate the opportunity to understand your priorities and the timeline you asked us to prepare.
+
+As discussed, we will include the project timeline in the proposal and send it by Friday for your review. Please let me know if there are any additional details you would like us to include.
+
+Best regards,
+[Your Name]",9.7,8.0,8.8,8.83,,False,"The generated email correctly recalls the meeting date, discussed topic, and proposal due date. However, it misses the fact that the client asked for a timeline. The tone is formal and suitable for the client, but it slightly deviates from the human reference email's polite and appreciative tone.",1
+2,advanced,openai/gpt-oss-120b,Request missing proposal details,Polite and clear,Request for Additional Proposal Details,"Dear [Recipient],
+
+I hope you are well. Thank you for sending the proposal. To complete our review, could you please provide the following:
+
+- A detailed pricing breakdown.
+- The implementation timeline.
+- Relevant case studies that demonstrate similar projects.
+
+We would appreciate receiving these items by Monday to stay on schedule.
+
+Thank you for your assistance.
+
+Best regards,
+[Your Name]","Subject: Request for Remaining Proposal Details
+
+Hi [Recipient],
+
+Thank you for sharing the proposal materials. Could you please send the remaining details, including the pricing breakdown, the implementation timeline, and any relevant case studies?
+
+We are working toward a Monday deadline, so receiving these details before then would help us complete our review on time.
+
+Best regards,
+[Your Name]",9.7,8.0,8.8,8.83,,False,"The generated email is mostly accurate, but it does not explicitly state the deadline as 'Monday' like the original intent. The tone is polite and clear, and the email quality is good, but not as polished as the human reference email.",1
+3,advanced,openai/gpt-oss-120b,Urgent project deadline reminder,Urgent but professional,Urgent: Project Deadline Tomorrow at 5 PM – Immediate Update Needed,"Dear [Recipient],
+
+I’m writing to remind you that the project deadline is tomorrow at 5 PM. The backend API is still pending, and our QA team cannot proceed without it. Could you please provide an update on the API status by noon today so we can ensure timely completion?
+
+Thank you for your prompt attention to this matter.
+
+Best regards,
+[Your Name]","Subject: Urgent Update Needed on Backend API
+
+Hi [Recipient],
+
+I wanted to flag that the project deadline is tomorrow at 5 PM, and the backend API is still pending. QA depends on this API to begin its final checks.
+
+Could you please send an update by noon today so we can adjust the plan if needed and keep the deadline on track?
+
+Best regards,
+[Your Name]",9.7,8.4,9.4,9.17,,False,"The generated email correctly conveys the urgency of the deadline and the dependency on the backend API. However, it misses the fact that the backend API is pending. The tone is mostly fitting, but it could be more professional in its language. The email quality is high, but it could benefit from a more polite closing sentence.",1
+4,advanced,openai/gpt-oss-120b,Apologize for a service delay,Empathetic,Apology for Service Delay and Updated Delivery Date,"Hi [Recipient],
+
+I’m sorry for the inconvenience caused by the delay in delivering the service. During our final QA we discovered an issue that needs to be resolved before we can proceed.
+
+Our team is actively fixing the problem, and we now expect to complete the delivery on Wednesday. I understand how this impacts your plans and appreciate your patience as we work to ensure the highest quality.
+
+Thank you for your understanding.
+
+Best regards,
+[Your Name]","Subject: Update on Service Delivery Timeline
+
+Hi [Recipient],
+
+I sincerely apologize for the service delay. Delivery will be delayed by 2 days because an issue was found during final QA.
+
+Our team is fixing it now, and the new delivery date is Wednesday. I understand this may create inconvenience, and I appreciate your patience while we make sure the final delivery meets the right standard.
+
+Best regards,
+[Your Name]",9.4,7.8,8.8,8.67,,False,"The generated email mostly recalls the required facts, but misses the main reason for the delay. The tone is empathetic, but slightly less polished than the human reference email. The email quality is good, but could be improved with more precise language.",3
+5,advanced,openai/gpt-oss-120b,Schedule an interview,Formal,Interview Invitation – Availability Request,"Dear [Candidate Name],
+
+I am pleased to inform you that you have been shortlisted for the next stage of our selection process. We would like to schedule a 30‑minute interview with you.
+
+Could you please let us know your availability for either Tuesday or Thursday of next week? Once we receive your preferred time, we will confirm the interview details.
+
+Thank you for your prompt response.
+
+Sincerely,
+[Your Name]
+[Your Title]
+[Company Name]","Subject: Interview Scheduling Request
+
+Dear [Recipient],
+
+We are pleased to let you know that the candidate has been shortlisted for the next stage. We would like to schedule a 30-minute interview and can offer either Tuesday or Thursday.
+
+Please share your availability for those days, and we will confirm the interview time accordingly.
+
+Best regards,
+[Your Name]",9.4,6.8,8.2,8.13,,False,"The generated email correctly conveys the candidate has been shortlisted, but does not explicitly state the interview duration and asks for availability in a less formal tone than requested.",3
+6,advanced,openai/gpt-oss-120b,Payment reminder,Polite but firm,Payment Reminder: Invoice #INV-2041,"Dear [Recipient],
+
+I hope you are well. This is a friendly reminder that Invoice #INV-2041 for the amount of $1,250 was due last Friday. Please find the invoice attached for your reference.
+
+Could you kindly confirm the date on which we can expect payment? Your prompt attention to this matter would be greatly appreciated.
+
+Thank you for your cooperation.
+
+Best regards,
+[Your Name]","Subject: Payment Reminder for Invoice #INV-2041
+
+Hi [Recipient],
+
+I am writing to follow up on Invoice #INV-2041 for $1,250, which was due last Friday. I have attached the invoice again for your reference.
+
+Could you please confirm the expected payment date? We would appreciate your prompt attention to this outstanding balance.
+
+Best regards,
+[Your Name]",9.7,8.32,8.8,8.94,,False,"The generated email correctly includes the invoice number, amount, and asks for a payment date. However, it does not explicitly mention the due date as 'last Friday'. The tone is polite but firm, and the email quality is good, but not as polished as the human reference email.",1
+7,advanced,openai/gpt-oss-120b,Internal project status update,Concise executive,"Project Status Update – Design Complete, API 80% Progress","Dear Team,
+
+- Design: completed.
+- API development: 80% complete.
+- QA: slated to begin next week.
+- Risk: potential delay due to pending client content.
+
+Please let me know if any adjustments are needed.
+
+Best regards,
+[Your Name]","Subject: Project Status Update
+
+Hi Team,
+
+Current status: design is completed, the API is 80% complete, and QA is scheduled to start next week.
+
+The main risk is delayed content from the client, which may affect downstream timelines. I will continue monitoring this and share updates as needed.
+
+Best regards,
+[Your Name]",9.7,8.32,7.53,8.52,,False,"The generated email effectively recalls and integrates the required facts, but slightly deviates from the requested tone and audience fit. The email quality is good, but not as polished as the human reference email.",3
+8,advanced,openai/gpt-oss-120b,Networking introduction,Friendly professional,Great meeting you at the SaaS meetup – let’s continue our AI tools conversation,"Hi [Recipient Name],
+
+It was a pleasure meeting you at the recent SaaS meetup. I enjoyed our discussion about AI tools and how they can streamline workflows.
+
+I’d love to share my portfolio with you so you can see some of the projects I’ve been working on: [Insert Portfolio Link].
+
+If you’re open to it, could we schedule a quick 15‑minute call next week to explore potential collaborations? Please let me know a time that works for you, or feel free to book directly on my calendar here: [Insert Calendar Link].
+
+Looking forward to staying in touch.
+
+Best regards,
+[Your Name]
+[Your Title]
+[Your Company]
+[Your Email]
+[Your Phone Number]","Subject: Great Meeting You at the SaaS Meetup
+
+Hi [Recipient],
+
+It was great meeting you at the SaaS meetup and discussing AI tools. I enjoyed hearing your perspective and wanted to stay in touch.
+
+Here is my portfolio link for reference: [Portfolio Link]. If you are open to it, I would be glad to schedule a 15-minute call to continue the conversation.
+
+Best regards,
+[Your Name]",10.0,8.5,10.0,9.5,,False,Deterministic checks only.,2
+9,advanced,openai/gpt-oss-120b,Request approval for budget,Persuasive,Budget Approval Request: $600 for Email API Credits (3-Month Pilot),"Dear [Recipient],
+
+I am writing to request approval for a $600 allocation to cover email API credits for our upcoming three‑month pilot. This pilot is projected to serve approximately 2,000 users each month, providing us with critical data on engagement and system performance. Securing these credits now will ensure uninterrupted service and allow us to evaluate the solution fully within the pilot period.
+
+Given the tight timeline, I would appreciate your approval by Friday so we can provision the credits and begin the pilot as scheduled.
+
+Thank you for considering this request. I am happy to discuss any details at your convenience.
+
+Best regards,
+[Your Name]
+[Your Title]
+[Your Company]","Subject: Budget Approval Request for Email API Credits
+
+Dear [Recipient],
+
+I am requesting approval for $600 in email API credits to support our 3-month pilot. This budget will allow us to test the workflow at an expected scale of 2,000 monthly users.
+
+Approval by Friday would help us keep the pilot timeline on track and avoid delays in user testing. Please let me know if you need any additional details.
+
+Best regards,
+[Your Name]",9.7,8.0,9.4,9.03,,False,"The generated email accurately recalls and integrates all required facts, effectively conveys a persuasive tone, and maintains a high level of professional email quality. The only minor deduction is for tone, as the human reference email's tone is slightly more concise and direct.",1
+10,advanced,openai/gpt-oss-120b,Respond to customer complaint,Calm and empathetic,Apology and Corrected Report Attached,"Dear [Customer Name],
+
+I’m sorry to hear that you received the wrong report file. Please accept my sincere apologies for any inconvenience this may have caused.
+
+I have attached the corrected file to this email for your review. If you have any questions or would like to discuss the report in more detail, I would be happy to arrange a follow‑up call at a time that works for you.
+
+Thank you for bringing this to our attention, and please let me know how I can further assist you.
+
+Best regards,
+[Your Name]
+[Your Position]
+[Your Company]","Subject: Corrected Report File Attached
+
+Hi [Recipient],
+
+Thank you for letting us know that the wrong report file was sent. I apologize for the mistake and any inconvenience it caused.
+
+The corrected file is attached to this email. If it would be helpful, I am also happy to schedule a follow-up call to walk through the report or answer any questions.
+
+Best regards,
+[Your Name]",9.7,8.4,8.8,8.97,,False,"The generated email effectively recalls and integrates the required facts, but misses one phrase from the human reference email. The tone is generally calm and empathetic, but could be more polished to match the human reference email's quality.",1
