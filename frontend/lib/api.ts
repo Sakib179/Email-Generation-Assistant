@@ -92,6 +92,9 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
     }
     throw new Error(detail);
   }
+  if (response.status === 204) {
+    return undefined as T;
+  }
   return response.json() as Promise<T>;
 }
 
@@ -108,4 +111,10 @@ export function generateEmail(payload: GenerateEmailPayload): Promise<GenerateEm
 
 export function getHistory(): Promise<HistoryResponse> {
   return request<HistoryResponse>("/api/history");
+}
+
+export function deleteHistoryItem(id: number): Promise<void> {
+  return request<void>(`/api/history/${id}`, {
+    method: "DELETE"
+  });
 }

@@ -129,6 +129,11 @@ class Storage:
             for row in rows
         ]
 
+    def delete_history_item(self, item_id: int) -> bool:
+        with sqlite3.connect(self.sqlite_path) as conn:
+            cursor = conn.execute("DELETE FROM generations WHERE id = ?", (item_id,))
+            return cursor.rowcount > 0
+
 
 def _json_list(value: str | None) -> list[str]:
     if not value:

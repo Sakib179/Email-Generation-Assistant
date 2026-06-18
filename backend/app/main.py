@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
@@ -104,3 +104,9 @@ async def evaluate_email(request: EmailEvaluationRequest) -> EmailEvaluationResp
 async def history() -> HistoryResponse:
     return HistoryResponse(items=storage.list_history(limit=20))
 
+
+@app.delete("/api/history/{item_id}", status_code=204)
+async def delete_history_item(item_id: int) -> Response:
+    if not storage.delete_history_item(item_id):
+        raise HTTPException(status_code=404, detail="History item not found.")
+    return Response(status_code=204)

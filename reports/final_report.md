@@ -1,18 +1,28 @@
 # Final Report: Email Generation Assistant
 
-## Project Summary
-This project builds a production-ready prototype that generates polished professional English emails from Intent, Key Facts, and Tone using Groq-hosted LLMs through a FastAPI backend.
+Generated: June 18, 2026
 
-## Recommended Strategy
-The recommended production strategy is `advanced` with an overall average of 8.86/10.
+## 1. Project Overview
 
-## Advanced Prompting Technique
-Strategy B uses Role-Playing + Few-Shot Examples + Structured JSON Output + Self-Check/Repair Prompting. This improves quality because the model receives a precise professional role, concrete examples, a parseable output contract, and a repair pass when fact coverage or quality thresholds are not met.
+This project is a working Email Generation Assistant that creates professional English emails from three required user inputs: **Intent**, **Key Facts**, and **Tone**. The prototype uses a Next.js frontend, a FastAPI backend, Groq-hosted LLMs, SQLite history storage, and a custom evaluation pipeline.
 
-## Exact Strategy B Prompt Template
-# Strategy B Production Prompt Template
+## 2. Implementation Summary
 
-Prompt version: `email-production-v1.0.0`
+- Frontend: Next.js UI for entering intent, key facts, tone, strategy, and optional model override.
+- Backend: FastAPI endpoints for generation, evaluation, health, and history management.
+- Generation flow: validated request -> prompt builder -> Groq chat completion -> JSON parsing -> quality checker -> repair loop when needed -> SQLite history.
+- Reliability features: server-side API key handling, field validation, model fallback, structured output parsing, custom scoring, and saved generation history.
+
+## 3. Prompt Engineering Technique
+
+Strategy B uses an advanced prompt design combining:
+
+- **Role-Playing:** the model acts as a senior executive communication specialist.
+- **Few-Shot Examples:** sample business emails show tone, structure, fact integration, and JSON format.
+- **Structured JSON Output:** the model returns subject, email body, included facts, missing facts, tone, and notes.
+- **Self-Check/Repair Prompting:** weak outputs are repaired using explicit quality failure reasons.
+
+## 4. Prompt Template Used
 
 ## Advanced Generation System Prompt
 
@@ -102,16 +112,6 @@ Return only valid JSON in this exact format:
 }
 ```
 
-## Strategy A Baseline Prompt
-
-```text
-Write a professional English email based on the following information.
-Intent: {{intent}}
-Key Facts: {{key_facts}}
-Tone: {{tone}}
-Include a subject line and email body.
-```
-
 ## Repair Prompt Template
 
 ```text
@@ -133,81 +133,89 @@ Rewrite the email so that:
 Return only valid JSON using the same schema as the generation prompt.
 ```
 
+## 5. Custom Evaluation Metrics
 
+### Fact Recall and Integration
+- Scale: 0-10
+- Definition: Checks whether every required key fact appears correctly and naturally in the email.
+- Logic: 70% deterministic fact presence and 30% LLM natural-integration judgment when the judge is available.
 
-## Custom Metrics
-# Custom Metric Definitions
+### Tone and Audience Fit
+- Scale: 0-10
+- Definition: Rates whether the generated email matches the requested tone while staying professional.
+- Logic: LLM-as-a-judge score with deterministic tone fallback.
 
-The assistant implements exactly three custom metrics.
+### Professional Email Quality
+- Scale: 0-10
+- Definition: Rates subject, greeting, body clarity, CTA, closing, conciseness, grammar, and fluency.
+- Logic: 40% deterministic structure checks and 60% LLM quality judgment when the judge is available.
 
-## Metric 1: Fact Recall and Integration Score
+## 6. Evaluation Results
 
-Scale: 0-10
+The same 10 scenarios were evaluated against two strategies: `simple` baseline prompting and `advanced` production prompting.
 
-This metric checks whether every required key fact appears accurately and naturally in the generated email. The implementation combines deterministic keyword and number matching with LLM-as-a-judge scoring when a Groq key is available.
+### Average Scores
 
-Formula:
+| Strategy | Fact Recall | Tone Fit | Email Quality | Overall |
+|---|---:|---:|---:|---:|
+| Simple | 9.29 | 7.93 | 7.65 | 8.29 |
+| Advanced | 9.67 | 8.05 | 8.85 | 8.86 |
 
-```text
-score = 0.70 * fact_presence_score + 0.30 * llm_natural_integration_score
-```
+### Raw Scores by Scenario
 
-The system penalizes missing facts, distorted facts, unsupported additions, and awkward fact placement.
+| Scenario | Strategy | Intent | Tone | Fact Recall | Tone Fit | Email Quality | Overall |
+|---:|---|---|---|---:|---:|---:|---:|
+| 1 | advanced | Follow up after a client meeting | Formal | 9.70 | 8.00 | 8.80 | 8.83 |
+| 1 | simple | Follow up after a client meeting | Formal | 9.40 | 6.80 | 6.87 | 7.69 |
+| 2 | advanced | Request missing proposal details | Polite and clear | 9.70 | 8.00 | 8.80 | 8.83 |
+| 2 | simple | Request missing proposal details | Polite and clear | 9.70 | 8.00 | 8.07 | 8.59 |
+| 3 | advanced | Urgent project deadline reminder | Urgent but professional | 9.70 | 8.40 | 9.40 | 9.17 |
+| 3 | simple | Urgent project deadline reminder | Urgent but professional | 9.70 | 8.40 | 8.07 | 8.72 |
+| 4 | advanced | Apologize for a service delay | Empathetic | 9.40 | 7.80 | 8.80 | 8.67 |
+| 4 | simple | Apologize for a service delay | Empathetic | 7.95 | 8.40 | 8.07 | 8.14 |
+| 5 | advanced | Schedule an interview | Formal | 9.40 | 6.80 | 8.20 | 8.13 |
+| 5 | simple | Schedule an interview | Formal | 9.40 | 6.80 | 6.87 | 7.69 |
+| 6 | advanced | Payment reminder | Polite but firm | 9.70 | 8.32 | 8.80 | 8.94 |
+| 6 | simple | Payment reminder | Polite but firm | 9.70 | 8.32 | 6.87 | 8.30 |
+| 7 | advanced | Internal project status update | Concise executive | 9.70 | 8.32 | 7.53 | 8.52 |
+| 7 | simple | Internal project status update | Concise executive | 9.70 | 8.32 | 8.07 | 8.70 |
+| 8 | advanced | Networking introduction | Friendly professional | 10.00 | 8.50 | 10.00 | 9.50 |
+| 8 | simple | Networking introduction | Friendly professional | 9.70 | 7.88 | 7.47 | 8.35 |
+| 9 | advanced | Request approval for budget | Persuasive | 9.70 | 8.00 | 9.40 | 9.03 |
+| 9 | simple | Request approval for budget | Persuasive | 9.70 | 8.00 | 8.07 | 8.59 |
+| 10 | advanced | Respond to customer complaint | Calm and empathetic | 9.70 | 8.40 | 8.80 | 8.97 |
+| 10 | simple | Respond to customer complaint | Calm and empathetic | 7.95 | 8.40 | 8.07 | 8.14 |
 
-## Metric 2: Tone and Audience Fit Score
+## 7. Comparative Analysis
 
-Scale: 0-10
+- Best strategy: **advanced**.
+- Production recommendation: Use advanced for production. It achieved the strongest overall average (8.86/10) and should remain paired with the quality checker and repair loop.
+- Biggest lower-performing strategy failure mode: the simple strategy produced weaker fact coverage/consistency and lower professional email quality than the advanced strategy.
 
-This metric evaluates whether the email matches the requested tone while staying professional and appropriate for the audience. The LLM judge rates formal, casual, urgent, empathetic, persuasive, polite but firm, concise executive, and friendly professional styles. A deterministic tone heuristic stabilizes the score for clear tone markers.
+## 8. Deliverables and Reproducibility
 
-Formula:
+- Editable report source: `reports/Final_Report.md`
+- PDF report: `reports/Final_Report.pdf`
+- Raw CSV evaluation data: `E:/web development project 2026/Email Generation Assistant/reports/evaluation_results.csv`
+- Raw JSON evaluation data: `E:/web development project 2026/Email Generation Assistant/reports/evaluation_results.json`
+- Prompt documentation: `E:/web development project 2026/Email Generation Assistant/docs/prompt_template.md`
+- Metric documentation: `E:/web development project 2026/Email Generation Assistant/docs/metric_definitions.md`
+- Strategy comparison: `E:/web development project 2026/Email Generation Assistant/reports/comparison_summary.md`
+- Setup instructions: `README.md`
 
-```text
-score = 0.40 * deterministic_tone_alignment + 0.60 * llm_tone_judge_score
-```
-
-## Metric 3: Professional Email Quality Score
-
-Scale: 0-10
-
-This metric checks the email as a professional communication artifact: subject line, greeting, clear body, call-to-action when useful, closing, sign-off, conciseness, grammar, and fluency.
-
-Formula:
-
-```text
-score = 0.40 * structure_score + 0.60 * llm_professional_quality_score
-```
-
-The deterministic structure score includes subject length, greeting, paragraph count, call-to-action signal, sign-off, and default length boundaries.
-
-
-## Raw Evaluation Data
-- CSV: `E:/web development project 2026/Email Generation Assistant/reports/evaluation_results.csv`
-- JSON: `E:/web development project 2026/Email Generation Assistant/reports/evaluation_results.json`
-
-## Comparative Analysis
-# Model/Strategy Comparison Summary
-
-## Winner
-Based on the evaluation across 10 scenarios, advanced performed better overall.
-
-## Metric Results
-- Fact Recall and Integration: Strategy A = 9.29, Strategy B = 9.67
-- Tone and Audience Fit: Strategy A = 7.93, Strategy B = 8.05
-- Professional Email Quality: Strategy A = 7.65, Strategy B = 8.85
-- Overall Average: Strategy A = 8.29, Strategy B = 8.86
-
-## Biggest Failure Mode
-simple mainly failed on fact coverage and consistency: 2 of 10 samples had missing or weakly integrated facts.
-
-## Production Recommendation
-Use advanced for production. It achieved the strongest overall average (8.86/10) and should remain paired with the quality checker and repair loop.
-
-
-## PDF Export
-PDF generation is not automated in this repository. Export this Markdown file to PDF with one of these commands:
+### Run Commands
 
 ```bash
-pandoc reports/final_report.md -o reports/final_report.pdf
-# or use VS Code Markdown Preview: Open Preview -> Print -> Save as PDF
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r backend/requirements.txt
+cd frontend
+npm install
+npm run dev
+```
+
+```bash
+.venv\Scripts\activate
+uvicorn backend.app.main:app --reload --host 127.0.0.1 --port 8000
+python evaluation/run_evaluation.py
 ```
