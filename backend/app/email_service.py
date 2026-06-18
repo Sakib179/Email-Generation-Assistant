@@ -118,6 +118,8 @@ class EmailService:
         best = max(attempts, key=lambda item: item.quality_scores.overall)
         needs_human_review = bool(best.failure_reasons)
         response = EmailGenerationResponse(
+            intent=request.intent,
+            key_facts=request.key_facts,
             subject=best.draft.subject,
             email=best.draft.email,
             included_facts=best.included_facts or best.draft.included_facts,
@@ -153,8 +155,13 @@ class EmailService:
                     subject=response.subject,
                     email=response.email,
                     quality_scores=response.quality_scores,
+                    included_facts=response.included_facts,
+                    missing_facts=response.missing_facts,
                     attempt_count=response.attempt_count,
                     needs_human_review=response.needs_human_review,
+                    review_reasons=response.review_reasons,
+                    hallucination_flag=response.hallucination_flag,
+                    judge_reason=response.judge_reason,
                     prompt_version=response.prompt_version,
                     token_usage=best.token_usage,
                     latency_ms=best.latency_ms,

@@ -104,6 +104,8 @@ class JudgeScores(BaseModel):
 
 
 class EmailGenerationResponse(BaseModel):
+    intent: str | None = None
+    key_facts: list[str] = Field(default_factory=list)
     subject: str
     email: str
     included_facts: list[str]
@@ -140,13 +142,21 @@ class HistoryItem(BaseModel):
     id: int
     created_at: str
     intent: str
+    key_facts: list[str]
     tone: str
     strategy: str
     model_used: str
     subject: str
     email: str
+    included_facts: list[str] = Field(default_factory=list)
+    missing_facts: list[str] = Field(default_factory=list)
     quality_scores: QualityScores
+    attempt_count: int = 1
     needs_human_review: bool
+    review_reasons: list[str] = Field(default_factory=list)
+    hallucination_flag: bool = False
+    judge_reason: str = ""
+    prompt_version: str = ""
 
 
 class HistoryResponse(BaseModel):
@@ -164,8 +174,13 @@ class GenerationLogRecord(BaseModel):
     subject: str
     email: str
     quality_scores: QualityScores
+    included_facts: list[str] = Field(default_factory=list)
+    missing_facts: list[str] = Field(default_factory=list)
     attempt_count: int
     needs_human_review: bool
+    review_reasons: list[str] = Field(default_factory=list)
+    hallucination_flag: bool = False
+    judge_reason: str = ""
     prompt_version: str
     token_usage: dict[str, Any] = Field(default_factory=dict)
     latency_ms: float | None = None

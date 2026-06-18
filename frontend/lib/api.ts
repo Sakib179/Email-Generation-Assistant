@@ -16,6 +16,8 @@ export type QualityScores = {
 };
 
 export type GenerateEmailResponse = {
+  intent?: string | null;
+  key_facts: string[];
   subject: string;
   email: string;
   included_facts: string[];
@@ -45,13 +47,21 @@ export type HistoryItem = {
   id: number;
   created_at: string;
   intent: string;
+  key_facts: string[];
   tone: string;
   strategy: StrategyName;
   model_used: string;
   subject: string;
   email: string;
+  included_facts: string[];
+  missing_facts: string[];
   quality_scores: QualityScores;
+  attempt_count: number;
   needs_human_review: boolean;
+  review_reasons: string[];
+  hallucination_flag: boolean;
+  judge_reason: string;
+  prompt_version: string;
 };
 
 export type HistoryResponse = {
